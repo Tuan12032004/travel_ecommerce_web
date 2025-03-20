@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt Khách Sạn</title>
+    <link rel="stylesheet" href="booking styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Đặt Khách Sạn</h1>
+        
+        <div class="card" id="hotel-booking-section">
+            <h2>Thông tin khách sạn</h2>
+            <input type="text" placeholder="Thành phố / Địa điểm" id="location">
+            <input type="date" placeholder="Ngày nhận phòng" id="checkin-date">
+            <input type="date" placeholder="Ngày trả phòng" id="checkout-date">
+            <select id="room-count">
+                <option value="1">1 phòng</option>
+                <option value="2">2 phòng</option>
+                <option value="3">3 phòng</option>
+                <option value="4">4 phòng</option>
+            </select>
+            <button onclick="bookHotel()">Tìm khách sạn</button>
+        </div>
+        
+        <p><a href="index.html">Quay lại trang chủ</a> | <a href="flight_booking.html">Đặt vé máy bay</a></p>
+    </div>
+    
+    <script>
+        function bookHotel() {
+            let location = document.getElementById('location').value;
+            let checkinDate = document.getElementById('checkin-date').value;
+            let checkoutDate = document.getElementById('checkout-date').value;
+            let rooms = document.getElementById('room-count').value;
+            
+            if (!location || !checkinDate || !checkoutDate) {
+                alert("Vui lòng nhập đầy đủ thông tin khách sạn.");
+                return;
+            }
+            
+            alert(`Đang tìm khách sạn tại ${location} từ ngày ${checkinDate} đến ${checkoutDate}. Số phòng: ${rooms}`);
+        }
+    </script>
+</body>
+</html>

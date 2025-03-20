@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập</title>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Chào mừng đến với Traveloka</h1>
+        
+        <div class="card" id="login-section">
+            <h2>Đăng Nhập</h2>
+            <input type="email" placeholder="Email" id="login-email">
+            <input type="password" placeholder="Mật khẩu" id="login-password">
+            <button onclick="login()">Đăng Nhập</button>
+            
+            <!-- Nút Quên mật khẩu -->
+            <p><a href="#" onclick="forgotPassword()">Quên mật khẩu?</a></p>
+            
+            <!-- Google Sign-In Button -->
+            <div id="g_id_onload"
+                 data-client_id="YOUR_GOOGLE_CLIENT_ID"
+                 data-callback="handleCredentialResponse"
+                 data-auto_prompt="false">
+            </div>
+            <div class="g_id_signin" data-type="standard"></div>
+        </div>
+        
+        <p>Bạn chưa có tài khoản? <a href="register.html">Đăng ký ngay</a></p>
+    </div>
+    
+    <script>
+        function login() {
+            let email = document.getElementById('login-email').value;
+            let password = document.getElementById('login-password').value;
+            alert(`Đăng nhập với email: ${email}`);
+        }
+        
+        function handleCredentialResponse(response) {
+            const data = JSON.parse(atob(response.credential.split('.')[1]));
+            alert(`Đăng nhập thành công: ${data.email}`);
+        }
+
+        function forgotPassword() {
+            let email = prompt("Nhập email của bạn để đặt lại mật khẩu:");
+            if (email) {
+                alert(`Một liên kết đặt lại mật khẩu đã được gửi đến ${email}`);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f5ff;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.title {
+    color: #2a4e6e;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.card h2 {
+    color: #3a6ea5;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus {
+    border-color: #3a6ea5;
+    outline: none;
+}
+
+button {
+    background-color: #3a6ea5;
+    color: white;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2a4e6e;
+}
+
+a {
+    color: #3a6ea5;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #2a4e6e;
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .card {
+        padding: 20px;
+    }
+    
+    input, select, button {
+        padding: 10px;
+        font-size: 14px;
+    }
+    
+    .title {
+        font-size: 2em;
+    }
+}

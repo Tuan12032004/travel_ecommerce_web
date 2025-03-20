@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Đăng Ký Tài Khoản</h1>
+        
+        <div class="card" id="register-section">
+            <h2>Đăng Ký</h2>
+            <input type="text" placeholder="Họ và tên" id="register-name">
+            <input type="email" placeholder="Email" id="register-email">
+            <input type="tel" placeholder="Số điện thoại" id="register-phone">
+            <input type="password" placeholder="Mật khẩu" id="register-password">
+            <input type="password" placeholder="Xác nhận mật khẩu" id="confirm-password">
+            <button onclick="register()">Hoàn tất Đăng Ký</button>
+        </div>
+        
+        <p>Đã có tài khoản? <a href="login.html">Đăng nhập</a></p>
+    </div>
+    
+    <script>
+        function register() {
+            let name = document.getElementById('register-name').value;
+            let email = document.getElementById('register-email').value;
+            let phone = document.getElementById('register-phone').value;
+            let password = document.getElementById('register-password').value;
+            let confirmPassword = document.getElementById('confirm-password').value;
+            
+            if (password !== confirmPassword) {
+                alert("Mật khẩu xác nhận không khớp. Vui lòng thử lại.");
+                return;
+            }
+            
+            alert(`Đăng ký thành công!\nTên: ${name}\nEmail: ${email}\nSố điện thoại: ${phone}`);
+        }
+    </script>
+</body>
+</html>

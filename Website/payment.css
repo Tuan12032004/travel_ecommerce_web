@@ -1,0 +1,59 @@
+/* payment.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.card {
+    padding: 30px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+#qr-code {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+}
+/* Nút quay lại */
+.container > p {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.container a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    background: #4cc9f0;
+    color: white !important;
+    transition: all 0.3s ease;
+}
+
+.container a:hover {
+    background: #3aa8cc;
+    box-shadow: 0 4px 15px rgba(76,201,240,0.3);
+    transform: translateY(-2px);
+}
+
+.container a::before {
+    content: '←';
+    font-weight: bold;
+}
+

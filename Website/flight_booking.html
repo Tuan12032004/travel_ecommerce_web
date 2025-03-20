@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt Vé Máy Bay</title>
+    <link rel="stylesheet" href="booking styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Đặt Vé Máy Bay</h1>
+        
+        <div class="card" id="flight-booking-section">
+            <h2>Thông tin chuyến bay</h2>
+            <input type="text" placeholder="Điểm đi" id="departure">
+            <input type="text" placeholder="Điểm đến" id="destination">
+            <input type="date" placeholder="Ngày đi" id="departure-date">
+            <input type="date" placeholder="Ngày về (nếu có)" id="return-date">
+            <select id="passenger-count">
+                <option value="1">1 hành khách</option>
+                <option value="2">2 hành khách</option>
+                <option value="3">3 hành khách</option>
+                <option value="4">4 hành khách</option>
+            </select>
+            <button onclick="bookFlight()">Tìm chuyến bay</button>
+        </div>
+        
+        <p><a href="index.html">Quay lại trang chủ</a> | <a href="hotel_booking.html">Đặt khách sạn</a></p>
+    </div>
+    
+    <script>
+        function bookFlight() {
+            let departure = document.getElementById('departure').value;
+            let destination = document.getElementById('destination').value;
+            let departureDate = document.getElementById('departure-date').value;
+            let returnDate = document.getElementById('return-date').value;
+            let passengers = document.getElementById('passenger-count').value;
+            
+            if (!departure || !destination || !departureDate) {
+                alert("Vui lòng nhập đầy đủ thông tin chuyến bay.");
+                return;
+            }
+            
+            alert(`Đang tìm chuyến bay từ ${departure} đến ${destination} vào ngày ${departureDate}${returnDate ? ", khứ hồi ngày " + returnDate : ""}. Số hành khách: ${passengers}`);
+        }
+    </script>
+</body>
+</html>
